@@ -16,7 +16,7 @@ Custom syntax for Debasing Grounds
 - numbers
 - reputation tags
 - $xxx keys
-- 
+
 ==Debug==
 Inspect Editor Tokens and Scopes
 
