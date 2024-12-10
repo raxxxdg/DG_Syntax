@@ -1,0 +1,45 @@
+{
+  "name": "dgg",
+  "displayName": "dgg",
+  "description": "DG Game",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.95.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "themes": [
+      {
+        "label": "DG Game Theme",
+        "uiTheme": "vs",
+        "path": "./themes/dgg.json"
+      }
+    ],
+    "languages": [
+      {
+        "id": "dgg",
+        "aliases": [
+          "DG Game",
+          "dgg"
+        ],
+        "extensions": [
+          ".dgg",
+          ".js"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "dgg",
+        "scopeName": "source.dgg",
+        "path": "./syntaxes/dgg.tmLanguage.json"
+      }
+    ]
+  },
+  "dependencies": {
+    "jsdom": "^25.0.1"
+  }
+}

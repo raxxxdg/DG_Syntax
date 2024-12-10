@@ -1,0 +1,112 @@
+{
+  "scopeName": "source.dgg",
+  "patterns": [
+    {
+      "comment": "Match keys starting with $",
+      "match": "\\$(\\w+)(?=[-\"\\)])",
+      "name": "variable.key.dollar.dgg"
+    },
+    {
+      "comment": "Match reput tag",
+      "match": "\\b(Threatening in public|Deescalated street encounter|Won fight in the street|Social|High level networking - Town|Rebecca's test subject|Medical test subject|Test subject for software|Caught pickpocketing|Cold ringing|Rescued Ina|Sold Ina|Synapse Friend Ad|Public humiliation - Town|High level networking - Administration|Troublemaker - Administration|Administration's Fugitive|Complied during frisking|Resisted frisking|Failed bargaining during frisking|Submissive - Police|Eager - Police|Stoic - Police|Defiant - Police|Resistance broken - Police|Social blunder - Police|Submissive - Administration|Eager - Administration|Stoic - Administration|Defiant - Administration|Resistance broken - Administration|Social blunder - Administration|High level networking - Police|Dangerous - Police|Troublemaker - Police|Noted as prostitute|Noted as pickpocket|Noted as Gangster|Fugitive|Run from the police|Fought the police|Reported crime|Released by the Police|Police informant|Police's bunny|Thulle Deviant's Ritual|Introduced to Thulle Deviants|Thulle Deviants - Missed guard duty|Thulle Deviants - Completed guard duty|Thulle Deviants - Won fight|Thulle Deviants - Out of place|Eager - Thulle Deviants|Stoic - Thulle Deviants|Submissive - Thulle Deviants|Defiant - Thulle Deviants|Resistance broken - Thulle Deviants|Troublemaker - Thulle Deviants|Thulle Deviants - Helpful|Passed Thulle's examination|Failed Thulle's examination|Kicked out from Thulle|Fought Thulle|Stole Protein for Thulle|Exposed the Food Processing Center|Fixed bolts on Thule's warehouse door|Fixed holes on Thule's warehouse door|Fixed the leak at Thulle's showers|Fixed the communal beds in Thulle|Armed the mobs|Failed to gather a mob|Failed to assault the Thieves' corner|Successfully assaulted the Thieves' corner|Secured the Thieves' corner for Thulle|South street patrolled by Thulle|Failed to secure south street|Sabotaged the bar for Thulle|Built a prison for Thulle|Cleared the Deep Slums for Thulle|Re-populated the Deep Slums for Thulle|Deviant behavior in Thulle|Social blunder - Thulle|Social danger - Thulle|Dangerous - Thulle|Troublemaker - Thulle|Recruited a novice|Coffee shop victim|Gave money to beggar|Jumped|Meddling with business|Forced prostitution|Submissive - Ronda Gang|Eager - Ronda Gang|Stoic - Ronda Gang|Defiant - Ronda Gang|Resistance broken - Ronda Gang|Social blunder - Ronda Gang|Social danger - Ronda Gang|Dangerous - Ronda Gang|Pending gym debt|Troublemaker - Ronda Gang|Known Thulle Deviant - Ronda Gang|Arena recruiter|Arena victor|Arena 3 vs 1 victor|Defeated in the arena|Marked by Viper for Skipping Pimp Fees|Endured humiliating training|Impressed Holger during training|Performed impressive training|Naked at the gym|Stood your ground - Gym|Holger's pet|Gym's pet|Holger's collared pet|Gym's collared pet|Gym's chem dealer|Gym's main supplier|Found a supplier for the gym|Begged - Gym|Eager - Gym|Submissive - Gym|Stoic - Gym|Defiant - Gym|Public humiliation - Gym|Resistance broken - Gym|Caught stealing|Recruited gym member|Troublemaker - Gym|Endured the pillory|Approached people being filthy|Panic attack in public|Fell asleep in public|Animal trainer|Police's public slut|Naked in public|Worked as a prostitute|Submissive - Town|Eager - Town|Stoic - Town|Defiant - Town|Resistance broken - Town|Social blunder - Town|Social danger - Town|Dangerous - Town|Troublemaker - Town|High level networking - Isara Inc|Joined Isara|Presented results|Failed disrespect|Disparaged poor data|Missed weekly meeting|Fired by Sagara|Failed results|Social danger - Isara Inc|Dangerous - Isara Inc|Missed Isara-Morgan deal|Allowed Equiknot's sadism|Troublemaker - Isara Inc|Missed shift at the Electronics store|Fired from the Electronics store|High level networking - Synapse Corp|Social danger - Synapse Corp|Dangerous - Synapse Corp|Troublemaker - Synapse Corp|Synapse Best Friend|Filmed edging scene|Filmed whipping scene|Filmed anal scene|Pitiful performance working at the wall|Begged for money|Contentious|Worked at the wall)\\b",
+      "name": "variable.key.reput.dgg"
+    },
+    {
+      "comment": "Match fet tag",
+      "match": "\\b(act anal training|pas anal training|authority figures|act beatings|pas beatings|act bondage|pas bondage|act breath play|pas breath play|act chastity|pas chastity|act cock worship|pas cock worship|act cum play|pas cum play|act discipline|pas discipline|act edging|pas edging|act electrical|pas electrical|exhibitionism|act feminization|pas feminization|act forced orientation|pas forced orientation|act gangbangs|pas gangbangs|act humiliation|pas humiliation|act medical|pas medical|act milking|pas milking|act needle play|pas needle play|act NTR|pas NTR|act petplay|pas petplay|act prostitution|pas prostitution|act rape|pas rape|rough sex|pas slavery|act spanking|pas spanking|act strapon|pas strapon|act torture|pas torture|act verbal abuse|pas verbal abuse|voyeurism|act watersports|pas watersports|act whipping|pas whipping)\\b",
+      "name": "variable.key.fet.dgg"
+    },
+    {
+      "comment": "Match skill tag",
+      "match": "\\b(Barter|Control|Escape|Evasion|Fighting|Lifting|Lockpick|Manual labor|Pickpocket|Precision work|Problem solving|Production|Seduction|Service tasks|Sneaking|Social|Temperance|Vigor)\\b",
+      "name": "variable.key.skill.dgg"
+    },
+    {
+      "comment": "Match keys 'value' and 'options'",
+      "match": "\\b(value|options)(?=\":)",
+      "name": "variable.key.special.dgg"
+    },
+    {
+      "comment": "Match operators",
+      "match": "(?<=:)(set|addl|add|dell|del|==|!=|inl|ninl|ino|nino|morev|moreq|lessv|lessq|length|lengthmore)(?=:)",
+      "name": "variable.key.special.dgg"
+    },
+    {
+      "comment": "Match tag",
+      "match": "\\b(flag|gameplay|ppc|npc|world|quests|factions|config)\\b",
+      "name": "constant.language.value.dgg"
+    },
+    {
+      "comment": "Match sub tag",
+      "match": "\\b(location|inventory|enviro)\\b",
+      "name": "constant.language.subtag.dgg"
+    },
+    {
+      "comment": "Match function",
+      "match": "\\b(changeSchedule|breakUpOthers|showmap|lootbox|getchanged|lootback|shop|input|wear|hide|addStat|addModEff|addOneTimeEff|addDecEff|addOtherEff|addReput|delStat|addFading|addNotice|addNPC|addNPCtoList|populClear|populate|updateTime|getStats|getTattoo|reRoll|submiss|quest|changeMascFemNPC|end|endSex|endHookUp|moveStep|htmlBack|sex|social|clean|checkNPCcheating|fetishNPC|trust|obedience|useSkill|levelSkill|vacate|baseMascFem|hosted|tenant|getPierced|takeOffPiercings|clearPiercings|breakCheck|updateNpcList|undress|unbind|wallet|goHomeNPC|goHome|switchNPC|generateRelArray|loc|clearDungeon|oleclean|npcAttributeChange|pcAttributeChange|reputFaction|fetish|sleep|saveoutfit|putOnPiercing|saveL|stand|shower|setFeatures|step|restock|violationCheck)\\b",
+      "name": "constant.language.keyword.dgg"
+    },
+    {
+      "comment": "Regex process",
+      "begin": "%<",
+      "end": ">%",
+      "beginCaptures": {
+        "0": {
+          "name": "punctuation.symbol.dgg"
+        }
+      },
+      "endCaptures": {
+        "0": {
+          "name": "punctuation.symbol.dgg"
+        }
+      },
+      "patterns": [
+        {
+          "match": "skillCheck|chanceCheck",
+          "name": "punctuation.symbol.dgg"
+        }
+      ]
+    },
+    {
+      "comment": "Regex process start",
+      "match": "%<",
+      "name": "punctuation.symbol.dgg"
+    },
+    {
+      "comment": "Regex process end",
+      "match": ">%",
+      "name": "punctuation.symbol.dgg"
+    },
+    {
+      "comment": "Match everything between escaped quotes",
+      "match": "\\\\\".+?\\\\\"",
+      "name": "string.quoted.double.dgg"
+    },
+    {
+      "comment": "Highlight double symbols",
+      "match": "(\\{\\{|\\}\\}|\\)\\)|\\(\\()",
+      "name": "punctuation.doubsymbol.dgg"
+    },
+    {
+      "comment": "Highlight object symbols: {, }, [, ], =, and \"",
+      "match": "[{}\\[\\]=;\"]",
+      "name": "punctuation.symbol.dgg"
+    },
+    {
+      "comment": "Match special keys",
+      "match": "\\b(value|options)(?=\":)",
+      "name": "variable.key.special.dgg"
+    },
+    {
+      "comment": "Match numbers",
+      "match": "\\b\\d+(\\.\\d+)?\\b",
+      "name": "constant.numeric"
+    }
+  ],
+  "repository": {},
+  "fileTypes": [
+    "js",
+    "json",
+    "dgg"
+  ]
+}
