@@ -15,3 +15,4 @@ Inspect Editor Tokens and Scopes
 - sex action tags
 - sociala action tags
 - quest tags
+- items
