@@ -54,6 +54,10 @@
 			"settings": { "foreground": "#929b18" }
 		},
 		{
+			"scope": "variable.key.location.dgg",
+			"settings": { "foreground": "#24dfd5" }
+		},
+		{
 			"scope": "variable.key.fet.dgg",
 			"settings": { "foreground": "#9b188a" }
 		},

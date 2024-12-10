@@ -11,10 +11,12 @@ const wrappedContent = `
     window.fetishTagsObj = {};  
     window.reputObject = {};  
     window.skillTagsArray = [];  
+    window.locationsObject = {};
     ${dataContent}
     window.fetishTagsObj = fetishTagsObj;  
     window.reputObject = reputObject;  
     window.skillTagsArray = skillTagsArray;  
+    window.locationsObject = locationsObject;
 `;
 
 const dom = new JSDOM('<!DOCTYPE html><html><body><script>' + wrappedContent + '</script></body></html>', {
@@ -36,10 +38,18 @@ let sourceData = {
   specialKeys: ['value', 'options'],
   fetKeys: Object.keys(dom.window.fetishTagsObj),
   skillKeys: dom.window.skillTagsArray,
-  reputKeys: Object.keys(dom.window.reputObject)
+  reputKeys: Object.keys(dom.window.reputObject),
+  locationKeys: Object.keys(dom.window.locationsObject)
 };
 
-// Function to create a pattern object for matching skills
+function createLocationPattern(locationKeys) {
+  return {    
+    comment: "Match location tag",
+    match: `\\b(${locationKeys.join('|')})\\b`,
+    name: "variable.key.location.dgg"
+  };
+}
+
 function createSkillPattern(skillKeys) {
   return {    
     comment: "Match skill tag",
@@ -56,7 +66,6 @@ function createReputPattern(reputKeys) {
   };
 }
 
-// Function to create a pattern object for matching fets
 function createFetPattern(fetKeys) {
   return {    
     comment: "Match fet tag",
@@ -65,7 +74,6 @@ function createFetPattern(fetKeys) {
   };
 }
 
-// Function to create a pattern object for matching functions
 function createFunctionPattern(functions) {
   return {
     comment: "Match function",
@@ -74,7 +82,6 @@ function createFunctionPattern(functions) {
   };
 }
 
-// Function to create a pattern object for matching tags
 function createTagPattern(tags) {
   return {
     comment: "Match tag",
@@ -83,7 +90,6 @@ function createTagPattern(tags) {
   };
 }
 
-// Function to create a pattern for special keys
 function createSpecialKeysPattern(keys) {
   return {
     comment: "Match special keys",
@@ -92,7 +98,6 @@ function createSpecialKeysPattern(keys) {
   };
 }
 
-// Function to update or insert a pattern
 function updatePattern(patterns, newPattern, commentToMatch) {
   const index = patterns.findIndex(p => p.comment === commentToMatch);
   if (index !== -1) {
@@ -104,14 +109,18 @@ function updatePattern(patterns, newPattern, commentToMatch) {
   return patterns; // Return the modified array
 }
 
-// Update the patterns
+updatePattern(
+  grammar.patterns, 
+  createLocationPattern(sourceData.locationKeys), 
+  "Match location tag"
+);
+
 updatePattern(
   grammar.patterns, 
   createSkillPattern(sourceData.skillKeys), 
   "Match skill tag"
 );
 
-// Update the patterns
 updatePattern(
   grammar.patterns, 
   createReputPattern(sourceData.reputKeys), 

@@ -2,8 +2,13 @@
   "scopeName": "source.dgg",
   "patterns": [
     {
+      "comment": "Match location tag",
+      "match": "\\b(teaststreet|teastpassage|tsouthstreet|tweststreet|tnorthstreet|tmarketstreet|tmainsquare|tratscorner|tthievescorner|tnarrowstreet|tgenetics|tbar|tbarbershop|tbank|tbanVivian|tbanOffice|tcafe|tnorthstshop|tshop01|tcafepriv|thairsalon|tcustoms|ttower|tnightclub|tpharma|tpharmaSagara|tpharmaRebecca|tpharmaCiara|tpharmaHR|tpharmabreak|tgenomics|tgenRedLab|tgenBlueLab|tgenGreenLab|thouse05|tfood|tfoodPlant|tfoodUpper|tadvert|tadvLobby|tadvAudit|tsoftware|tsoftHead|tsoftVault0|tsoftVault1|tsoftVault2|tsoftVault3|tsoftCaspian|tprison|tmedia|tmedLobby|tmedProd|tgym|tpolice|tpolicein|tbrothel|tbroDisplay|tbroRoom|teastsa1|teastsa2|teastsa3|teastsa4|teastsa5|toleoffice|toleroom1|toleroom3|tolesalon1|teastsa6|teastsa6perm|teastsa6temp|teastsa6manor|teastsa6office|teastsa6mbroom|teastsa6sroom|teastpg1|teastpg1a1|teastpg1a2|teastpg1a3|teastpg1a4|teastpg1a5|teastpg1a6|teastpg2|teastpg3|teastpg4|teastpg4a1|teastpg4a2|teastpg4a3|teastpg4a4|teastpg4a5|teastpg4a5r2|teastpg4a6|teastpg4a7|teastpg5|teastpg6|teastpg6a1|teastpg6a2|teastpg6a3|teastpg6a4|teastpg6a5|teastpg6a6|teastpg7|teastpg7a2|teastpg8|twestslums|twestslumssquare|twestslumshut1|twestslumshut2|twestslumshut3|twestslumshut4|twestslumshut5|twestslumshut6|twestslumshut7|twestslumshut8|twestslumshut9|twhostel|twhostellobby|twhostelreception|twhostelfloor1|twhostelroom101|twhostelroom102|twhostelroom103|twhostelroom104|twhostelroom105|twhostelfloor2|twhostelroom201|twhostelroom202|twhostelroom203|twhostelroom204|twhostelroom205|twhostelfloor3|twhostelroom301|twhostelroom302|twhostelroom303|twhostelroom304|twhostelroom305|twpawnshop|twtrinkets|twnarcotics|twarena|twarenagrounds|trondahq|trondaden|teastslums|teastbrowns|tewarehouse|teworkshop|tecommonhall|tcustodians|tcustodianDungeon|tcustodian1|tcustodian2|tcustodian3|tcustodian4|tcustodian5|tcustodian6|tdeepslums|tdeepbrowns|tcentralslums|tcentralbrowns|tcentralbrownsFarm|tcenHavenIn|tcenHavenVangard|tcenHavenDungeon|tcenHavenBarracks|tcenHavenHall|tmainsa1|tmainsa1a1|tmainsa1a2|tmainsa1a3|tmainsa1a4|tmainsa1a5|tmainsa1a6|tmainsa1a7|tmainsa1a8|t3mainst|t4mainst|tmainsa5|tmainsa5a1|tmainsa5a2|tmainsa5a3|tmainsa5a4|tmainsa5a5|tmainsa5a6|tmainsa5a7|tmainsa5a8|tmainsa6|tmainsa7|tmainsa6a1|tmainsa6a2|tmainsa6a3|tmainsa6a4|tmainsa6a5|tmainsa6a6|t8mainst|tnorthsa1|tnorthsa1a1|tnorthsa1a2|tnorthsa1a3|tnorthsa1a4|tnorthsa1a5|tnorthsa1a6|tnorthsa1a7|tnorthsa1a8|tnorthsa2|tnorthsa3|tnorthsa4|tnorthsa4a1|tnorthsa4a2|tnorthsa4a3|tnorthsa4a4|tnorthsa4a5|tnorthsa4a6|tnorthsa5|tnorthsa6|tnorthsa7|tnorthsa8|tsouthsa1|tsouthsa2|tsouthsa3|tsouthsa4|tsouthsa5|tsouthsa6|tsouthsa7|tsouthsa8|tsouthsa9|tsouthsax|thardware|tfashion|telectronics|trestaurant|tgroceries|tdetective|twarehouse|tkeepgrounds|tkgrhole|tkgrposts|tkgrquarters|tkgrartifacts|tkeepwalls|tguardhouse|tkeep|tredgate|tredinner|twalls|tsexshop|tpiercings|trestrains|tatm|tmaingate|tnorthgate|twestgate|teastgate)\\b",
+      "name": "variable.key.location.dgg"
+    },
+    {
       "comment": "Match keys starting with $",
-      "match": "\\$(\\w+)(?=[-\"\\)])",
+      "match": "\\$(\\w+)(?=[-\"\\)]&|)",
       "name": "variable.key.dollar.dgg"
     },
     {
@@ -28,9 +33,9 @@
     },
     {
       "comment": "Match operators",
-      "match": "(?<=:)(set|addl|add|dell|del|==|!=|inl|ninl|ino|nino|morev|moreq|lessv|lessq|length|lengthmore)(?=:)",
+      "match": "(?<=:)(set|addl|addle|add|dell|del|==|!=|inl|ninl|ino|nino|morev|moreq|lessv|lessq|length|lengthmore)(?=:)",
       "name": "variable.key.special.dgg"
-    },
+    },    
     {
       "comment": "Match tag",
       "match": "\\b(flag|gameplay|ppc|npc|world|quests|factions|config)\\b",
@@ -38,7 +43,7 @@
     },
     {
       "comment": "Match sub tag",
-      "match": "\\b(location|inventory|enviro)\\b",
+      "match": "\\b(location|inventory|accessoryParts|visibleTattoos|enviro|postTextAction|npcID|countDowns|sexCon|sexMood|ncStep|population|stats|modEffects|reputEff|permEff|npc1|npc2|npc3|selectednpc|chatgroup|rejectList|npcLists|hour|named|rels)\\b",
       "name": "constant.language.subtag.dgg"
     },
     {
